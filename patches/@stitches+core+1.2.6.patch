@@ -1,0 +1,12 @@
+diff --git a/node_modules/@stitches/core/types/stitches.d.ts b/node_modules/@stitches/core/types/stitches.d.ts
+index 6815bb8..d667cee 100644
+--- a/node_modules/@stitches/core/types/stitches.d.ts
++++ b/node_modules/@stitches/core/types/stitches.d.ts
+@@ -204,6 +204,7 @@ type ThemeTokens<Values, Prefix> = {
+ 	[Scale in keyof Values]: {
+ 		[Token in keyof Values[Scale]]: ThemeUtil.Token<
+ 			Extract<Token, number | string>,
++			// @ts-ignore
+ 			Values[Scale][Token],
+ 			Extract<Scale, string | void>,
+ 			Extract<Prefix, string | void>

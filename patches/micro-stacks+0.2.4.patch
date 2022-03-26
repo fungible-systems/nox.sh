@@ -1,0 +1,21 @@
+diff --git a/node_modules/micro-stacks/connect.d.ts b/node_modules/micro-stacks/connect.d.ts
+index a2c1bfb..391d291 100644
+--- a/node_modules/micro-stacks/connect.d.ts
++++ b/node_modules/micro-stacks/connect.d.ts
+@@ -289,6 +289,7 @@ declare function generateSignedAuthRequest(authOptions: AuthOptions, transitPriv
+ declare function handleAuthResponse(authOptions: AuthOptions, transitPrivateKey: string): Promise<string>;
+ declare global {
+     interface Window {
++		// @ts-ignore
+         StacksProvider?: StacksProvider;
+     }
+ }
+diff --git a/node_modules/micro-stacks/crypto.d.ts b/node_modules/micro-stacks/crypto.d.ts
+index f56f8e4..5a567be 100644
+--- a/node_modules/micro-stacks/crypto.d.ts
++++ b/node_modules/micro-stacks/crypto.d.ts
+@@ -1,3 +1,4 @@
++// @ts-ignore
+ import * as crypto from 'crypto';
+ export { getPublicKey } from '@noble/secp256k1';
+ 
