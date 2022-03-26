@@ -4,18 +4,7 @@ import { Suspense } from 'react';
 import { WalletConnectButton } from '../components/wallet-connect-button';
 import { DocumentsList } from '../components/documents-list/documents-list';
 
-export const Home = () => {
-  const { isSignedIn } = useAuth();
-  if (isSignedIn) {
-    return (
-      <>
-        <Suspense fallback={<></>}>
-          <DocumentsList />
-        </Suspense>
-      </>
-    );
-  }
-
+const SignedOutView = () => {
   return (
     <Stack
       pb={'128px'}
@@ -31,4 +20,22 @@ export const Home = () => {
       <WalletConnectButton />
     </Stack>
   );
+};
+
+export const Home = () => {
+  const { isSignedIn } = useAuth();
+
+  // if we are signed in!
+  if (isSignedIn) {
+    return (
+      <>
+        <Suspense fallback={<></>}>
+          <DocumentsList />
+        </Suspense>
+      </>
+    );
+  }
+
+  // if we are signed out!
+  return <SignedOutView />;
 };

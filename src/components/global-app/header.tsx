@@ -1,5 +1,5 @@
 import { Box, SpaceBetween } from '@nelson-ui/react';
-import { WalletConnectButton } from './wallet-connect-button';
+import { WalletConnectButton } from '../wallet-connect-button';
 import { Link } from 'wouter';
 import { RoutePaths } from './routes';
 

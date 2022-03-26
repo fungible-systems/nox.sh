@@ -1,5 +1,5 @@
 import { MicroStacksProvider } from '@micro-stacks/react';
-import logo from '../logo.svg';
+import logo from '../../logo.svg';
 import React from 'react';
 
 export const MicroStacksWrapper: React.FC = ({ children }) => {

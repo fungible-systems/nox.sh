@@ -1,36 +1,10 @@
-import { Editor } from '../components/editor';
+import { Editor } from '../components/editor/editor';
 import { useRoute } from 'wouter';
-import { RoutePaths } from '../components/routes';
-import { FormEvent, Suspense } from 'react';
-import { useDocumentMeta } from '../store/documents';
-import { makeTimestamp } from '../common/utils';
-import { Box, Stack } from '@nelson-ui/react';
+import { RoutePaths } from '../components/global-app/routes';
+import { Suspense } from 'react';
+import { Stack } from '@nelson-ui/react';
+import { TitleEditor } from '../components/editor/document-title-editor';
 
-const TitleEditor = ({ docId }: { docId: string }) => {
-  const [state, setState] = useDocumentMeta(docId);
-
-  return (
-    <Box
-      as={'input'}
-      fontFamily={`'Space Grotesk', sans-serif`}
-      fontSize={'$7'}
-      p={0}
-      autoFocus={!state?.title}
-      border={0}
-      outline={'none'}
-      placeholder={'Untitled document'}
-      value={state?.title}
-      onChange={(e: FormEvent<HTMLInputElement>) => {
-        if (!state) return;
-        setState({
-          ...state,
-          updatedAt: makeTimestamp(),
-          title: e.currentTarget.value,
-        });
-      }}
-    />
-  );
-};
 export const Document = () => {
   const [, params] = useRoute(RoutePaths.Document);
   if (!params) return null;

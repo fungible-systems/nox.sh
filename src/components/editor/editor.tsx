@@ -1,8 +1,8 @@
 import { Box } from '@nelson-ui/react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import { useDocumentContent } from '../store/documents';
-import { makeTimestamp } from '../common/utils';
+import { useDocumentContent } from '../../store/documents';
+import { makeTimestamp } from '../../common/utils';
 import './editor.css';
 
 export function Editor({ docId }: { docId: string }) {

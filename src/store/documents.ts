@@ -1,4 +1,4 @@
-import { atomWithGaia } from '../common/atom-with-gaia';
+import { atomWithGaia } from './atom-with-gaia';
 import { atomFamily, useAtomCallback } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { makeNewEntity, uuid } from '../common/utils';
@@ -17,14 +17,14 @@ export interface BaseGaiaObject {
   updatedAt: number;
 }
 
-interface DocumentReference extends BaseGaiaObject {
+export interface DocumentReference extends BaseGaiaObject {
   // uuid
   id: string;
   // public key used to encrypt this document
   publicKey: string;
 }
 
-interface DocumentMeta extends BaseGaiaObject {
+export interface DocumentMeta extends BaseGaiaObject {
   // uuid
   id: string;
   // the author of the document (principal)
@@ -33,13 +33,13 @@ interface DocumentMeta extends BaseGaiaObject {
   title?: string;
 }
 
-interface DocumentContent extends BaseGaiaObject {
+export interface DocumentContent extends BaseGaiaObject {
   // uuid
   id: string;
   contents: string | null;
 }
 
-interface DocumentsIndex extends BaseGaiaObject {
+export interface DocumentsIndex extends BaseGaiaObject {
   documents: Record<string, DocumentReference>;
 }
 
@@ -139,6 +139,7 @@ export const useDocuments = (): [
   const [data] = useSession();
   const handleSetDocumentContent = useDocumentContentCallback();
   const handleSetDocumentMeta = useDocumentMetaCallback();
+
   const makeNewDocument = useCallback(async () => {
     if (!data?.appPrivateKey) throw Error('no private key');
     if (!data?.addresses?.mainnet) throw Error('no address');

@@ -1,6 +1,6 @@
 import { Route } from 'wouter';
-import { Home } from '../views/home';
-import { Document } from '../views/document';
+import { Home } from '../../views/home';
+import { Document } from '../../views/document';
 
 export enum RoutePaths {
   Home = '/',
