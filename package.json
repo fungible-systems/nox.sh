@@ -1,0 +1,46 @@
+{
+	"name": "vite-react-ts",
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"serve": "vite preview"
+	},
+	"prettier": "@stacks/prettier-config",
+	"dependencies": {
+		"@emotion/react": "^11.8.2",
+		"@emotion/styled": "^11.8.1",
+		"@micro-stacks/react": "0.2.0",
+		"@nelson-ui/react": "^0.1.5",
+		"@remirror/pm": "^1.0.14",
+		"@remirror/react": "^1.0.29",
+		"@remirror/react-editors": "^0.1.64",
+		"@tiptap/react": "^2.0.0-beta.108",
+		"@tiptap/starter-kit": "^2.0.0-beta.183",
+		"dayjs": "^1.11.0",
+		"jotai": "1.6.1",
+		"just-debounce-it": "^3.0.1",
+		"micro-stacks": "^0.2.4",
+		"modern-normalize": "^1.1.0",
+		"p-debounce": "^4.0.0",
+		"p-queue": "^7.2.0",
+		"p-retry": "^5.1.0",
+		"react": "18.0.0-rc.3",
+		"react-dom": "18.0.0-rc.3",
+		"remirror": "^1.0.72",
+		"use-debounce": "^7.0.1",
+		"wouter": "^2.8.0-alpha.2"
+	},
+	"devDependencies": {
+		"@stacks/prettier-config": "^0.0.10",
+		"@types/react": "^17.0.43",
+		"@types/react-dom": "^17.0.14",
+		"@vitejs/plugin-react": "1.2.0",
+		"prettier": "^2.6.1",
+		"typescript": "4.6.3",
+		"vite": "2.8.6"
+	},
+	"resolutions": {
+		"jotai": "1.6.1"
+	}
+}
